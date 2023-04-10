@@ -6,7 +6,11 @@
             text-align: center;
             color: #000000;
         }
+        .button_css{
+            background-color: #b4e612;
+        }
     </style>
+<body>
 <div class="main-page">
     <div id="start-page" class="text-style">
         <p>Build your own custom PC!</p>
@@ -46,11 +50,11 @@
         <button class="button_css" onclick="veryhighTier(5)">Ultra HD/4K(Very high tier)</button>
     </div>
     <div id="end-screen" class="text-style">
-        <h2>Thank you for customizing your PC!</h2>
-        <h3>Based on your chosen specifications, the estimated price of your PC is: <span id="price">0</span>
-        <p id="price-comment">comment</p>
+        <p>Thank you for customizing your PC!</p>
+        <p>Based on your chosen specifications, the estimated price of your PC is: <span id="price">0</span></p>
+        <p id="price-comment">comment should display here</p>
         <p>Here's the specifications your chose for your PC:</p>
-        <p id="customization-list">list</p>
+        <p id="customization-list">comment should display here</p>
         <p>Press restart below to customize another PC:</p>
         <button id="restart-button" onclick="restartCustomization()">Restart</button>
     </div>
@@ -78,8 +82,11 @@
     const displaySpecsList = document.getElementById("customization-list");
     const restart = document.getElementById("restart-button");
 
-    var priceSum = 0;
+    let priceSum = 0;
     const specsList = [];
+
+    console.log(specsList);
+    console.log(priceSum);
 
     function startSpecs() {
         homeScreen.style.display = "none";
@@ -89,28 +96,24 @@
     function lowTier(pageNumber) {
         priceSum = priceSum + 150;
         if(pageNumber === 1){
-            cpuScreen.style.display === "none";
-            gpuScreen.style.display === "block";
+            cpuScreen.style.display = "none";
+            gpuScreen.style.display = "block";
             specsList.push("Intel Core i3");
-        }
-        if(pageNumber === 2){
-            gpuScreen.style.display === "none";
-            storageScreen.style.display === "block";
+        } else if(pageNumber === 2){
+            gpuScreen.style.display = "none";
+            storageScreen.style.display = "block";
             specsList.push("Intel Iris Xe");
-        }
-        if(pageNumber === 3){
-            storageScreen.style.display === "none";
-            memoryScreen.style.display === "block";
+        } else if(pageNumber === 3){
+            storageScreen.style.display = "none";
+            memoryScreen.style.display = "block";
             specsList.push("512 GB");
-        }
-        if(pageNumber === 4){
-            memoryScreen.style.display === "none";
-            displayScreen.style.display === "block";
+        } else if(pageNumber === 4){
+            memoryScreen.style.display = "none";
+            displayScreen.style.display = "block";
             specsList.push("8 GB");
-        }
-        if(pageNumber === 5){
-            displayScreen.style.display === "none";
-            finishScreen.style.display === "block";
+        } else if(pageNumber === 5){
+            displayScreen.style.display = "none";
+            finishScreen.style.display = "block";
             specsList.push("HD");
         }
     }
@@ -118,28 +121,24 @@
     function medTier(pageNumber) {
         priceSum = priceSum + 300;
         if(pageNumber === 1){
-            cpuScreen.style.display === "none";
-            gpuScreen.style.display === "block";
+            cpuScreen.style.display = "none";
+            gpuScreen.style.display = "block";
             specsList.push("Intel Core i5");
-        }
-        if(pageNumber === 2){
-            gpuScreen.style.display === "none";
-            storageScreen.style.display === "block";
+        } else if(pageNumber === 2){
+            gpuScreen.style.display = "none";
+            storageScreen.style.display = "block";
             specsList.push("Nvidia GeForce RTX 3050");
-        }
-        if(pageNumber === 3){
-            storageScreen.style.display === "none";
-            memoryScreen.style.display === "block";
+        } else if(pageNumber === 3){
+            storageScreen.style.display = "none";
+            memoryScreen.style.display = "block";
             specsList.push("1 TB");
-        }
-        if(pageNumber === 4){
-            memoryScreen.style.display === "none";
-            displayScreen.style.display === "block";
+        } else if(pageNumber === 4){
+            memoryScreen.style.display = "none";
+            displayScreen.style.display = "block";
             specsList.push("16 GB");
-        }
-        if(pageNumber === 5){
-            displayScreen.style.display === "none";
-            finishScreen.style.display === "block";
+        } else if(pageNumber === 5){
+            displayScreen.style.display = "none";
+            finishScreen.style.display = "block";
             specsList.push("Full HD");
         }
     }
@@ -147,28 +146,24 @@
     function highTier(pageNumber) {
         priceSum = priceSum + 600;
         if(pageNumber === 1){
-            cpuScreen.style.display === "none";
-            gpuScreen.style.display === "block";
+            cpuScreen.style.display = "none";
+            gpuScreen.style.display = "block";
             specsList.push("Intel Core i7");
-        }
-        if(pageNumber === 2){
-            gpuScreen.style.display === "none";
-            storageScreen.style.display === "block";
+        } else if(pageNumber === 2){
+            gpuScreen.style.display = "none";
+            storageScreen.style.display = "block";
             specsList.push("Nvidia GeForce RTX 4070");
-        }
-        if(pageNumber === 3){
-            storageScreen.style.display === "none";
-            memoryScreen.style.display === "block";
+        } else if(pageNumber === 3){
+            storageScreen.style.display = "none";
+            memoryScreen.style.display = "block";
             specsList.push("2 TB");
-        }
-        if(pageNumber === 4){
-            memoryScreen.style.display === "none";
-            displayScreen.style.display === "block";
+        } else if(pageNumber === 4){
+            memoryScreen.style.display = "none";
+            displayScreen.style.display = "block";
             specsList.push("32 GB");
-        }
-        if(pageNumber === 5){
-            displayScreen.style.display === "none";
-            finishScreen.style.display === "block";
+        } else if(pageNumber === 5){
+            displayScreen.style.display = "none";
+            finishScreen.style.display = "block";
             specsList.push("Quad HD");
         }
     }
@@ -176,33 +171,30 @@
     function veryhighTier(pageNumber) {
         priceSum = priceSum + 800;
         if(pageNumber === 1){
-            cpuScreen.style.display === "none";
-            gpuScreen.style.display === "block";
+            cpuScreen.style.display = "none";
+            gpuScreen.style.display = "block";
             specsList.push("Intel Core i9");
-        }
-        if(pageNumber === 4){
-            memoryScreen.style.display === "none";
-            displayScreen.style.display === "block";
+        } else if(pageNumber === 4){
+            memoryScreen.style.display = "none";
+            displayScreen.style.display = "block";
             specsList.push("64 GB");
-        }
-        if(pageNumber === 5){
-            displayScreen.style.display === "none";
-            finishScreen.style.display === "block";
+        } else if(pageNumber === 5){
+            displayScreen.style.display = "none";
+            finishScreen.style.display = "block";
             specsList.push("Ultra HD/4K");
         }
     }
-
-    if(finishScreen.style.display === "block"){
-        price_display.innerHTML = string(priceSum);
+    
+    if (finishScreen.style.display === "block") {
+        price_display.innerHTML = String(priceSum);
         if(priceSum <= 1000){
             price_comment_display.innerHTML = "The PC with your specifications is relatively cheap!";
-        }
-        if(priceSum <= 1500 && priceSum > 1000){
+        } else if(priceSum <= 1500 && priceSum > 1000){
             price_comment_display.innerHTML = "The PC with your specifications is at a moderate price.";
-        }
-        if(priceSum > 1500){
+        } else if(priceSum > 1500){
             price_comment_display.innerHTML = "The PC with your specifications is pretty expensive. Make sure to pay attention to your budget!";
         }
+
         for(let i=0; i < specsList.length; i++){
             displaySpecsList.innerHTML = specsList[i] + "<br>";
         }
@@ -218,10 +210,10 @@
         finishScreen.style.display = "none";
         priceSum = 0;
 
-        let x = specsList.length;
-        while(x > -1){
-            specsList.pop();
+        for(let x=0; x < specsList.length; x++){
+            delete specsList[x];
         }
     }
 </script>
+</body>
 </html>
