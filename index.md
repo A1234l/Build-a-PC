@@ -1,42 +1,227 @@
-## Location
-> Browse [Coram Ranch Site](https://www.coramranch.com/) to learn about reunion location and surrounding community. 
-- [Video Tour](https://youtu.be/kX24Zv1CJZA)
-- [Google Maps 14251 Coram Rd, Shasta Lake, California 96089](https://www.google.com/maps/place/14251+Coram+Rd,+Shasta+Lake,+CA+96019/@40.707988,-122.44701,16z/data=!4m5!3m4!1s0x54d28be161c895ef:0xca3b8805b9b6a5ec!8m2!3d40.7079882!4d-122.4470104?hl=en)
-- ***NO PETS***
+<html>
+    <h1 class="main-page">Build Your own PC!</h1>
+    <hr>
+    <style>
+        .main-page{
+            text-align: center;
+            color: #000000;
+        }
+    </style>
+<div class="main-page">
+    <div id="start-page" class="text-style">
+        <p>Build your own custom PC!</p>
+        <button class="button_css" id="start-button" onclick="startSpecs()">Start</button>
+    </div>
+    <div id="select-cpu" class="text-style">
+        <p>Please select your CPU:</p>
+        <button class="button_css" onclick="lowTier(1)">Intel Core i3(Low tier)</button>
+        <button class="button_css" onclick="medTier(1)">Intel Core i5(Medium tier)</button>
+        <button class="button_css" onclick="highTier(1)">Intel Core i7(High tier)</button>
+        <button class="button_css" onclick="veryhighTier(1)">Intel Core i9(Very high tier)</button>
+    </div>
+    <div id="select-gpu" class="text-style">
+        <p>Please select your GPU:</p>
+        <button class="button_css" onclick="lowTier(2)">Intel Iris Xe(Low tier)</button>
+        <button class="button_css" onclick="medTier(2)">Nvidia GeForce RTX 3050(Medium tier)</button>
+        <button class="button_css" onclick="highTier(2)">Nvidia GeForce RTX 4070(High tier)</button>
+    </div>
+    <div id="select-storage" class="text-style">
+        <p>Please select your storage:</p>
+        <button class="button_css" onclick="lowTier(3)">512 GB(Low tier)</button>
+        <button class="button_css" onclick="medTier(3)">1 TB(Medium tier)</button>
+        <button class="button_css" onclick="highTier(3)">2 TB(High tier)</button>
+    </div>
+    <div id="select-memory" class="text-style">
+        <p>Please select your memory:</p>
+        <button class="button_css" onclick="lowTier(4)">8 GB(Low tier)</button>
+        <button class="button_css" onclick="medTier(4)">16 GB(Medium tier)</button>
+        <button class="button_css" onclick="highTier(4)">32 GB(High tier)</button>
+        <button class="button_css" onclick="veryhighTier(4)">64 GB(Very high tier)</button>
+    </div>
+    <div id="select-display" class="text-style">
+        <p>Please select your display:</p>
+        <button class="button_css" onclick="lowTier(5)">HD(Low tier)</button>
+        <button class="button_css" onclick="medTier(5)">Full HD(Medium tier)</button>
+        <button class="button_css" onclick="highTier(5)">Quad HD(High tier)</button>
+        <button class="button_css" onclick="veryhighTier(5)">Ultra HD/4K(Very high tier)</button>
+    </div>
+    <div id="end-screen" class="text-style">
+        <h2>Thank you for customizing your PC!</h2>
+        <h3>Based on your chosen specifications, the estimated price of your PC is: <span id="price">0</span>
+        <p id="price-comment">comment</p>
+        <p>Here's the specifications your chose for your PC:</p>
+        <p id="customization-list">list</p>
+        <p>Press restart below to customize another PC:</p>
+        <button id="restart-button" onclick="restartCustomization()">Restart</button>
+    </div>
+</div>
 
-## Schedule
+<script>
+    const homeScreen = document.getElementById("start-page");
+    const cpuScreen = document.getElementById("select-cpu");
+    const gpuScreen = document.getElementById("select-gpu");
+    const storageScreen = document.getElementById("select-storage");
+    const memoryScreen = document.getElementById("select-memory");
+    const displayScreen = document.getElementById("select-display");
+    const finishScreen = document.getElementById("end-screen");
 
-| Date | Day | Time | Event | Meet At | Coordinator |
-| --- | --- | --- | --- | --- | --- |
-| 6/26 | Monday | 3pm | Check in | Shasta Lakes | Frank and Judith |
-| --- | --- | 6pm | Dinner | Dining Room | Lisa |
-| --- | --- | 7pm | Leuck Greet | Dining Room | Frank and Judith |
-| 6/27 | Tuesday | 8am | Breakfast | Dining Room | Lisa |
-| --- | --- | 9:45am | Morning Huddle | Dining Room | Sherri|
-| --- | --- | 10am | Greet Games | Field and Court | Johnner, Lora, Shay|
-| --- | --- | 12pm | Make & Go Lunch | Dining Room | Lisa |
-| --- | --- | 2pm | Bike/Hike | Bike Rack | Johnner and Lora |
-| --- | --- | 6pm | Dinner hi| Dining Room | Sherri |
-| --- | --- | 7pm | Family Night | Dining Room | John and Mel |
-| 6/28 | Wednesday | 7:30 | Zumba | Court | Kira |
-| --- | --- | 8:30am | Breakfast | Dining | Lisa |
-| --- | --- | 10am | Pool Olympics | Pool Area | Annalyce, Peyton |
-| --- | --- | 12pm | Make & Go Lunch | Dining Room | Lisa |
-| --- | --- | 1pm | Spelunking | [Cars, 32 minutes travel](http://lakeshastacaverns.clickforward.com/group-tours) | Johnner and Lora|
-| --- | --- | 6pm | Dinner | Dining Room | Angela |
-| --- | --- | 7pm | Family Night | Dining Room | John and Mel |
-| 6/29 | Thursday | 8am | Breakfast | Dining Room | Lisa |
-| --- | --- | 10am | Field Olympics | Field | Jake, Taylor |
-| --- | --- | 12:30pm | Make & Go Lunch | Dining Room | Lisa |
-| --- | --- | 1pm | Boating | [Cars, 25 minutes travel](https://bridgebayhouseboats.com/houseboats/grand-sierra) | Jared |
-| --- | --- | 6pm | Dinner | Dining Room | Jared and Jeremiah |
-| --- | --- | 7pm | Family Night | Dining Room | John and Mel |
-| 6/30 | Friday | 7:30 | Zumba | Court | Lisa |
-| --- | --- | 8:30am | Breakfast | Dining | Kira |
-| --- | --- | 10am | Family Relays | Field or Court | Johnner |
-| --- | --- | 12pm | Make & Go Lunch | Dining Room | Lisa |
-| --- | --- | 1pm | Explore the area | You pick | Self coordinated |
-| --- | --- | 6pm | Dinner | Dining Room | John |
-| --- | --- | 7pm | Family Night | Dining Room |John and Mel |
-| 7/1 | Saturday | 8am | Breakfast | Dining Room | Lisa |
-| --- | --- | 10am | Check Out | Travel Home | Your it |
+    homeScreen.style.display = "block";
+    cpuScreen.style.display = "none";
+    gpuScreen.style.display = "none";
+    storageScreen.style.display = "none";
+    memoryScreen.style.display = "none";
+    displayScreen.style.display = "none";
+    finishScreen.style.display = "none";
+
+    const price_display = document.getElementById("price");
+    const price_comment_display = document.getElementById("price-comment");
+    const displaySpecsList = document.getElementById("customization-list");
+    const restart = document.getElementById("restart-button");
+
+    var priceSum = 0;
+    const specsList = [];
+
+    function startSpecs() {
+        homeScreen.style.display = "none";
+        cpuScreen.style.display = "block";
+    }
+
+    function lowTier(pageNumber) {
+        priceSum = priceSum + 150;
+        if(pageNumber === 1){
+            cpuScreen.style.display === "none";
+            gpuScreen.style.display === "block";
+            specsList.push("Intel Core i3");
+        }
+        if(pageNumber === 2){
+            gpuScreen.style.display === "none";
+            storageScreen.style.display === "block";
+            specsList.push("Intel Iris Xe");
+        }
+        if(pageNumber === 3){
+            storageScreen.style.display === "none";
+            memoryScreen.style.display === "block";
+            specsList.push("512 GB");
+        }
+        if(pageNumber === 4){
+            memoryScreen.style.display === "none";
+            displayScreen.style.display === "block";
+            specsList.push("8 GB");
+        }
+        if(pageNumber === 5){
+            displayScreen.style.display === "none";
+            finishScreen.style.display === "block";
+            specsList.push("HD");
+        }
+    }
+
+    function medTier(pageNumber) {
+        priceSum = priceSum + 300;
+        if(pageNumber === 1){
+            cpuScreen.style.display === "none";
+            gpuScreen.style.display === "block";
+            specsList.push("Intel Core i5");
+        }
+        if(pageNumber === 2){
+            gpuScreen.style.display === "none";
+            storageScreen.style.display === "block";
+            specsList.push("Nvidia GeForce RTX 3050");
+        }
+        if(pageNumber === 3){
+            storageScreen.style.display === "none";
+            memoryScreen.style.display === "block";
+            specsList.push("1 TB");
+        }
+        if(pageNumber === 4){
+            memoryScreen.style.display === "none";
+            displayScreen.style.display === "block";
+            specsList.push("16 GB");
+        }
+        if(pageNumber === 5){
+            displayScreen.style.display === "none";
+            finishScreen.style.display === "block";
+            specsList.push("Full HD");
+        }
+    }
+
+    function highTier(pageNumber) {
+        priceSum = priceSum + 600;
+        if(pageNumber === 1){
+            cpuScreen.style.display === "none";
+            gpuScreen.style.display === "block";
+            specsList.push("Intel Core i7");
+        }
+        if(pageNumber === 2){
+            gpuScreen.style.display === "none";
+            storageScreen.style.display === "block";
+            specsList.push("Nvidia GeForce RTX 4070");
+        }
+        if(pageNumber === 3){
+            storageScreen.style.display === "none";
+            memoryScreen.style.display === "block";
+            specsList.push("2 TB");
+        }
+        if(pageNumber === 4){
+            memoryScreen.style.display === "none";
+            displayScreen.style.display === "block";
+            specsList.push("32 GB");
+        }
+        if(pageNumber === 5){
+            displayScreen.style.display === "none";
+            finishScreen.style.display === "block";
+            specsList.push("Quad HD");
+        }
+    }
+
+    function veryhighTier(pageNumber) {
+        priceSum = priceSum + 800;
+        if(pageNumber === 1){
+            cpuScreen.style.display === "none";
+            gpuScreen.style.display === "block";
+            specsList.push("Intel Core i9");
+        }
+        if(pageNumber === 4){
+            memoryScreen.style.display === "none";
+            displayScreen.style.display === "block";
+            specsList.push("64 GB");
+        }
+        if(pageNumber === 5){
+            displayScreen.style.display === "none";
+            finishScreen.style.display === "block";
+            specsList.push("Ultra HD/4K");
+        }
+    }
+
+    if(finishScreen.style.display === "block"){
+        price_display.innerHTML = string(priceSum);
+        if(priceSum <= 1000){
+            price_comment_display.innerHTML = "The PC with your specifications is relatively cheap!";
+        }
+        if(priceSum <= 1500 && priceSum > 1000){
+            price_comment_display.innerHTML = "The PC with your specifications is at a moderate price.";
+        }
+        if(priceSum > 1500){
+            price_comment_display.innerHTML = "The PC with your specifications is pretty expensive. Make sure to pay attention to your budget!";
+        }
+        for(let i=0; i < specsList.length; i++){
+            displaySpecsList.innerHTML = specsList[i] + "<br>";
+        }
+    }
+
+    function restartCustomization() {
+        homeScreen.style.display = "block";
+        cpuScreen.style.display = "none";
+        gpuScreen.style.display = "none";
+        storageScreen.style.display = "none";
+        memoryScreen.style.display = "none";
+        displayScreen.style.display = "none";
+        finishScreen.style.display = "none";
+        priceSum = 0;
+
+        let x = specsList.length;
+        while(x > -1){
+            specsList.pop();
+        }
+    }
+</script>
+</html>
