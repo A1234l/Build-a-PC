@@ -91,7 +91,7 @@
         <p>Thank you for customizing your PC!</p>
         <p>Based on your chosen specifications, the estimated price of your PC is: <strong><span id="price">0</span></strong></p>
         <p id="price-comment"></p>
-        <p>Here's the specifications your chose for your PC:</p>
+        <p>Here's the specifications you chose for your PC:</p>
         <p id="customization-list">list should display here</p>
         <p>Press restart below to customize another PC:</p>
         <button class="start-end-button" id="restart-button" onclick="restartCustomization()">Restart</button>
@@ -137,23 +137,23 @@
         if(pageNumber === 1){
             cpuScreen.style.display = "none";
             gpuScreen.style.display = "block";
-            specsList.push("Intel Core i3");
+            specsList.push("CPU: Intel Core i3");
         } else if(pageNumber === 2){
             gpuScreen.style.display = "none";
             storageScreen.style.display = "block";
-            specsList.push("Intel Iris Xe");
+            specsList.push("GPU: Intel Iris Xe");
         } else if(pageNumber === 3){
             storageScreen.style.display = "none";
             memoryScreen.style.display = "block";
-            specsList.push("512 GB Storage");
+            specsList.push("Storage: 512 GB");
         } else if(pageNumber === 4){
             memoryScreen.style.display = "none";
             displayScreen.style.display = "block";
-            specsList.push("8 GB Memory");
+            specsList.push("Memory: 8 GB");
         } else if(pageNumber === 5){
             displayScreen.style.display = "none";
             finishScreen.style.display = "block";
-            specsList.push("HD");
+            specsList.push("Display: HD");
         }
     }
 
@@ -163,23 +163,23 @@
         if(pageNumber === 1){
             cpuScreen.style.display = "none";
             gpuScreen.style.display = "block";
-            specsList.push("Intel Core i5");
+            specsList.push("CPU: Intel Core i5");
         } else if(pageNumber === 2){
             gpuScreen.style.display = "none";
             storageScreen.style.display = "block";
-            specsList.push("Nvidia GeForce RTX 3050");
+            specsList.push("GPU: Nvidia GeForce RTX 3050");
         } else if(pageNumber === 3){
             storageScreen.style.display = "none";
             memoryScreen.style.display = "block";
-            specsList.push("1 TB Storage");
+            specsList.push("Storage: 1 TB");
         } else if(pageNumber === 4){
             memoryScreen.style.display = "none";
             displayScreen.style.display = "block";
-            specsList.push("16 GB Memory");
+            specsList.push("Memory: 16 GB");
         } else if(pageNumber === 5){
             displayScreen.style.display = "none";
             finishScreen.style.display = "block";
-            specsList.push("Full HD");
+            specsList.push("Display: Full HD");
         }
     }
 
@@ -189,23 +189,23 @@
         if(pageNumber === 1){
             cpuScreen.style.display = "none";
             gpuScreen.style.display = "block";
-            specsList.push("Intel Core i7");
+            specsList.push("CPU: Intel Core i7");
         } else if(pageNumber === 2){
             gpuScreen.style.display = "none";
             storageScreen.style.display = "block";
-            specsList.push("Nvidia GeForce RTX 4070");
+            specsList.push("GPU: Nvidia GeForce RTX 4070");
         } else if(pageNumber === 3){
             storageScreen.style.display = "none";
             memoryScreen.style.display = "block";
-            specsList.push("2 TB Storage");
+            specsList.push("Storage: 2 TB");
         } else if(pageNumber === 4){
             memoryScreen.style.display = "none";
             displayScreen.style.display = "block";
-            specsList.push("32 GB Memory");
+            specsList.push("Memory: 32 GB");
         } else if(pageNumber === 5){
             displayScreen.style.display = "none";
             finishScreen.style.display = "block";
-            specsList.push("Quad HD");
+            specsList.push("Display: Quad HD");
         }
     }
 
@@ -215,15 +215,15 @@
         if(pageNumber === 1){
             cpuScreen.style.display = "none";
             gpuScreen.style.display = "block";
-            specsList.push("Intel Core i9");
+            specsList.push("CPU: Intel Core i9");
         } else if(pageNumber === 4){
             memoryScreen.style.display = "none";
             displayScreen.style.display = "block";
-            specsList.push("64 GB Memory");
+            specsList.push("Memory: 64 GB");
         } else if(pageNumber === 5){
             displayScreen.style.display = "none";
             finishScreen.style.display = "block";
-            specsList.push("Ultra HD/4K");
+            specsList.push("Display: Ultra HD/4K");
         }
     }
 
@@ -247,15 +247,11 @@
             }
             displaySpecsList.innerHTML = listDisplay;
         }
+        // Allows for repetitive function calling
+        setTimeout(checkFinishDisplay, 500);
     }
 
-    // Repeatedly calls checkFinishDisplay() function to constantly check if user is on finish screen
-    function repeatingExecution(){
-        checkFinishDisplay();
-        setTimeout(repeatingExecution, 500);
-    }
-
-    repeatingExecution();
+    checkFinishDisplay();
 
     // Resets all data and returns to start screen, called by restart button
     function restartCustomization() {
