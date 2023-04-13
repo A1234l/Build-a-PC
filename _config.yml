@@ -3,6 +3,6 @@
 # - jekyll-remote-theme
 theme: jekyll-theme-architect
 title: "Build a PC"
-description: "CPT project for AP Computer Science Principles. Credits for the template to Mr Mortensen's repository: https://github.com/jm1021/leuck_reunion. Credits for Architect theme to this repository: https://github.com/pages-themes/architect"
+description: "CPT project for AP Computer Science Principles. Credits for the template to my teacher's repository: https://github.com/jm1021/leuck_reunion. Credits for Architect theme to this repository: https://github.com/pages-themes/architect"
 gitorg: "https://github.com/A1234l/Build-a-PC"
 google_analytics:
