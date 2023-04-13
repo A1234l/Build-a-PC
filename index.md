@@ -54,7 +54,7 @@
         <p>Based on your chosen specifications, the estimated price of your PC is: <span id="price">0</span></p>
         <p id="price-comment">comment should display here</p>
         <p>Here's the specifications your chose for your PC:</p>
-        <p id="customization-list">comment should display here</p>
+        <p id="customization-list">list should display here</p>
         <p>Press restart below to customize another PC:</p>
         <button id="restart-button" onclick="restartCustomization()">Restart</button>
     </div>
@@ -68,6 +68,10 @@
     const memoryScreen = document.getElementById("select-memory");
     const displayScreen = document.getElementById("select-display");
     const finishScreen = document.getElementById("end-screen");
+    const price_display = document.getElementById("price");
+    const price_comment_display = document.getElementById("price-comment");
+    const displaySpecsList = document.getElementById("customization-list");
+    const restart = document.getElementById("restart-button");
 
     homeScreen.style.display = "block";
     cpuScreen.style.display = "none";
@@ -77,16 +81,11 @@
     displayScreen.style.display = "none";
     finishScreen.style.display = "none";
 
-    const price_display = document.getElementById("price");
-    const price_comment_display = document.getElementById("price-comment");
-    const displaySpecsList = document.getElementById("customization-list");
-    const restart = document.getElementById("restart-button");
-
-    let priceSum = 0;
+    var priceSum = 0;
     const specsList = [];
 
     console.log(specsList);
-    console.log(priceSum);
+    
 
     function startSpecs() {
         homeScreen.style.display = "none";
@@ -116,6 +115,7 @@
             finishScreen.style.display = "block";
             specsList.push("HD");
         }
+        document.getElementById("price").innerHTML = priceSum;
     }
 
     function medTier(pageNumber) {
@@ -141,6 +141,7 @@
             finishScreen.style.display = "block";
             specsList.push("Full HD");
         }
+        document.getElementById("price").innerHTML = priceSum;
     }
 
     function highTier(pageNumber) {
@@ -166,6 +167,7 @@
             finishScreen.style.display = "block";
             specsList.push("Quad HD");
         }
+        document.getElementById("price").innerHTML = priceSum;
     }
 
     function veryhighTier(pageNumber) {
@@ -183,22 +185,30 @@
             finishScreen.style.display = "block";
             specsList.push("Ultra HD/4K");
         }
+        document.getElementById("price").innerHTML = priceSum;
     }
-    
+console.log("priceSum2: ",priceSum);
     if (finishScreen.style.display === "block") {
+        console.log("if block is executed");
         price_display.innerHTML = String(priceSum);
         if(priceSum <= 1000){
-            price_comment_display.innerHTML = "The PC with your specifications is relatively cheap!";
-        } else if(priceSum <= 1500 && priceSum > 1000){
-            price_comment_display.innerHTML = "The PC with your specifications is at a moderate price.";
-        } else if(priceSum > 1500){
-            price_comment_display.innerHTML = "The PC with your specifications is pretty expensive. Make sure to pay attention to your budget!";
+            document.getElementById("price-comment").innerHTML = "The PC with your specifications is relatively cheap!";
+        }
+        
+        if(priceSum <= 1500 && priceSum > 1000){
+            document.getElementById("price-comment").innerHTML = "The PC with your specifications is at a moderate price.";
+        }
+        
+        if(priceSum > 1500){
+            document.getElementById("price-comment").innerHTML = "The PC with your specifications is pretty expensive. Make sure to pay attention to your budget!";
         }
 
         for(let i=0; i < specsList.length; i++){
             displaySpecsList.innerHTML = specsList[i] + "<br>";
         }
+        // document.getElementById("price-comment").innerHTML = price_comment_display.textContent;
     }
+console.log("priceSumOutside: ",priceSum);
 
     function restartCustomization() {
         homeScreen.style.display = "block";
