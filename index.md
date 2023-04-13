@@ -52,7 +52,7 @@
     <div id="end-screen" class="text-style">
         <p>Thank you for customizing your PC!</p>
         <p>Based on your chosen specifications, the estimated price of your PC is: <span id="price">0</span></p>
-        <p id="price-comment">comment should display here</p>
+        <p id="price-comment"></p>
         <p>Here's the specifications your chose for your PC:</p>
         <p id="customization-list">list should display here</p>
         <p>Press restart below to customize another PC:</p>
@@ -74,6 +74,7 @@
     const restart = document.getElementById("restart-button");
 
     homeScreen.style.display = "block";
+    // price_comment_display.style.display = "block";
     cpuScreen.style.display = "none";
     gpuScreen.style.display = "none";
     storageScreen.style.display = "none";
@@ -82,7 +83,7 @@
     finishScreen.style.display = "none";
 
     var priceSum = 0;
-    const specsList = [];
+    var specsList = [];
 
     console.log(specsList);
     
@@ -98,24 +99,29 @@
             cpuScreen.style.display = "none";
             gpuScreen.style.display = "block";
             specsList.push("Intel Core i3");
+            // updateList();
         } else if(pageNumber === 2){
             gpuScreen.style.display = "none";
             storageScreen.style.display = "block";
             specsList.push("Intel Iris Xe");
+            // updateList();
         } else if(pageNumber === 3){
             storageScreen.style.display = "none";
             memoryScreen.style.display = "block";
             specsList.push("512 GB");
+            // updateList();
         } else if(pageNumber === 4){
             memoryScreen.style.display = "none";
             displayScreen.style.display = "block";
             specsList.push("8 GB");
+            // updateList();
         } else if(pageNumber === 5){
             displayScreen.style.display = "none";
             finishScreen.style.display = "block";
             specsList.push("HD");
+            // updateList();
         }
-        document.getElementById("price").innerHTML = priceSum;
+        price_display.innerHTML = priceSum;
     }
 
     function medTier(pageNumber) {
@@ -124,24 +130,29 @@
             cpuScreen.style.display = "none";
             gpuScreen.style.display = "block";
             specsList.push("Intel Core i5");
+            // updateList();
         } else if(pageNumber === 2){
             gpuScreen.style.display = "none";
             storageScreen.style.display = "block";
             specsList.push("Nvidia GeForce RTX 3050");
+            // updateList();
         } else if(pageNumber === 3){
             storageScreen.style.display = "none";
             memoryScreen.style.display = "block";
             specsList.push("1 TB");
+            // updateList();
         } else if(pageNumber === 4){
             memoryScreen.style.display = "none";
             displayScreen.style.display = "block";
             specsList.push("16 GB");
+            // updateList();
         } else if(pageNumber === 5){
             displayScreen.style.display = "none";
             finishScreen.style.display = "block";
             specsList.push("Full HD");
+            // updateList();
         }
-        document.getElementById("price").innerHTML = priceSum;
+        price_display.innerHTML = priceSum;
     }
 
     function highTier(pageNumber) {
@@ -150,24 +161,29 @@
             cpuScreen.style.display = "none";
             gpuScreen.style.display = "block";
             specsList.push("Intel Core i7");
+            // updateList();
         } else if(pageNumber === 2){
             gpuScreen.style.display = "none";
             storageScreen.style.display = "block";
             specsList.push("Nvidia GeForce RTX 4070");
+            // updateList();
         } else if(pageNumber === 3){
             storageScreen.style.display = "none";
             memoryScreen.style.display = "block";
             specsList.push("2 TB");
+            // updateList();
         } else if(pageNumber === 4){
             memoryScreen.style.display = "none";
             displayScreen.style.display = "block";
             specsList.push("32 GB");
+            // updateList();
         } else if(pageNumber === 5){
             displayScreen.style.display = "none";
             finishScreen.style.display = "block";
             specsList.push("Quad HD");
+            // updateList();
         }
-        document.getElementById("price").innerHTML = priceSum;
+        price_display.innerHTML = priceSum;
     }
 
     function veryhighTier(pageNumber) {
@@ -176,39 +192,56 @@
             cpuScreen.style.display = "none";
             gpuScreen.style.display = "block";
             specsList.push("Intel Core i9");
+            // updateList();
         } else if(pageNumber === 4){
             memoryScreen.style.display = "none";
             displayScreen.style.display = "block";
             specsList.push("64 GB");
+            // updateList();
         } else if(pageNumber === 5){
             displayScreen.style.display = "none";
             finishScreen.style.display = "block";
             specsList.push("Ultra HD/4K");
+            // updateList();
         }
-        document.getElementById("price").innerHTML = priceSum;
+        price_display.innerHTML = priceSum;
     }
-console.log("priceSum2: ",priceSum);
-    if (finishScreen.style.display === "block") {
-        console.log("if block is executed");
-        price_display.innerHTML = String(priceSum);
-        if(priceSum <= 1000){
-            document.getElementById("price-comment").innerHTML = "The PC with your specifications is relatively cheap!";
-        }
-        
-        if(priceSum <= 1500 && priceSum > 1000){
-            document.getElementById("price-comment").innerHTML = "The PC with your specifications is at a moderate price.";
-        }
-        
-        if(priceSum > 1500){
-            document.getElementById("price-comment").innerHTML = "The PC with your specifications is pretty expensive. Make sure to pay attention to your budget!";
-        }
 
-        for(let i=0; i < specsList.length; i++){
-            displaySpecsList.innerHTML = specsList[i] + "<br>";
-        }
-        // document.getElementById("price-comment").innerHTML = price_comment_display.textContent;
+    price_comment_display.style.display = "block";
+
+    function checkFinishDisplay(){
+        if (finishScreen.style.display === "block") {
+        console.log("if block is executed");
+            if(priceSum <= 1000){
+            document.getElementById("price-comment").innerHTML = "The PC with your specifications is relatively cheap!";
+            } else if(priceSum <= 1500 && priceSum > 1000){
+                document.getElementById("price-comment").innerHTML = "The PC with your specifications is at a moderate price.";
+            } else if(priceSum > 1500){
+                document.getElementById("price-comment").innerHTML = "The PC with your specifications is pretty expensive. Make sure to pay attention to your budget!";
+            }
     }
-console.log("priceSumOutside: ",priceSum);
+    updateList();
+    }
+
+    function repeatingExecution(){
+        checkFinishDisplay();
+        setTimeout(repeatingExecution, 500);
+    }
+
+    repeatingExecution();
+
+    function updateList() {
+        let specs = "";
+        for (let i = 0; i < specsList.length; i++) {
+            specs += specsList[i] + "<br>";
+        }
+        displaySpecsList.innerHTML = specs;
+
+        // // let specs = "";
+        // for (let i = 0; i < specsList.length; i++) {
+        //     displaySpecsList.innerHTML = specsList[i] + "<br>";
+        // }
+    }
 
     function restartCustomization() {
         homeScreen.style.display = "block";
@@ -218,11 +251,9 @@ console.log("priceSumOutside: ",priceSum);
         memoryScreen.style.display = "none";
         displayScreen.style.display = "none";
         finishScreen.style.display = "none";
-        priceSum = 0;
 
-        for(let x=0; x < specsList.length; x++){
-            delete specsList[x];
-        }
+        priceSum = 0;
+        specsList = [];
     }
 </script>
 </body>
