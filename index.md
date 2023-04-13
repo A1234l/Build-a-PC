@@ -240,13 +240,13 @@
                 } else if(priceSum > 1500){
                     price_comment_display.innerHTML = "The PC with your specifications is pretty expensive. Make sure to pay attention to your budget!";
                 }
+            // Display specifications chosen by user
+            let listDisplay = "";
+            for (let i = 0; i < specsList.length; i++) {
+                listDisplay += specsList[i] + "<br>";
+            }
+            displaySpecsList.innerHTML = listDisplay;
         }
-        // Display specifications chosen by user
-        let listDisplay = "";
-        for (let i = 0; i < specsList.length; i++) {
-            listDisplay += specsList[i] + "<br>";
-        }
-        displaySpecsList.innerHTML = listDisplay;
     }
 
     // Repeatedly calls checkFinishDisplay() function to constantly check if user is on finish screen
