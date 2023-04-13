@@ -34,6 +34,10 @@
             background-color: #888a4e;
             color: #abd6d1;
         }
+        #price-comment{
+            background-color: #f2ef35;
+            border-width: 5px;
+        }
     </style>
 <body>
 <div class="main-page">
@@ -90,7 +94,7 @@
     <div id="end-screen" class="text-style">
         <p>Thank you for customizing your PC!</p>
         <p>Based on your chosen specifications, the estimated price of your PC is: <strong><span id="price">0</span></strong></p>
-        <p id="price-comment"></p>
+        <p><span id="price-comment"></span></p>
         <p>Here's the specifications you chose for your PC:</p>
         <p id="customization-list">list should display here</p>
         <p>Press restart below to customize another PC:</p>
