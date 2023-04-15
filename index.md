@@ -243,7 +243,7 @@ Another credits to Intel and Nvidia for the CPUs and GPUs that they created. -->
         if (finishScreen.style.display === "block") {
             // Display price
             price_display.innerHTML = priceSum + " dollars";
-                // Display comment
+            // Display comment
             if(priceSum <= 1000){
                 price_comment_display.innerHTML = "The PC with your specifications is relatively cheap!";
             } else if(priceSum <= 1500 && priceSum > 1000){
