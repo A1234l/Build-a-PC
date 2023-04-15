@@ -1,3 +1,6 @@
+<!-- Credits for the template to my teacher's repository: https://github.com/jm1021/leuck_reunion.
+Credits for Architect theme to this repository: https://github.com/pages-themes/architect.
+Another credits to Intel and Nvidia for the CPUs and GPUs that they created. -->
 <html>
     <h1 class="main-page">Build Your own PC!</h1>
     <hr>
@@ -158,6 +161,7 @@
             displayScreen.style.display = "none";
             finishScreen.style.display = "block";
             specsList.push("Display: HD");
+            checkFinishDisplay();
         }
     }
 
@@ -184,6 +188,7 @@
             displayScreen.style.display = "none";
             finishScreen.style.display = "block";
             specsList.push("Display: Full HD");
+            checkFinishDisplay();
         }
     }
 
@@ -210,6 +215,7 @@
             displayScreen.style.display = "none";
             finishScreen.style.display = "block";
             specsList.push("Display: Quad HD");
+            checkFinishDisplay();
         }
     }
 
@@ -228,6 +234,7 @@
             displayScreen.style.display = "none";
             finishScreen.style.display = "block";
             specsList.push("Display: Ultra HD/4K");
+            checkFinishDisplay();
         }
     }
 
@@ -247,15 +254,12 @@
             // Display specifications chosen by user
             let listDisplay = "";
             for (let i = 0; i < specsList.length; i++) {
-                listDisplay += specsList[i] + "<br>";
+                listDisplay = listDisplay + specsList[i] + "<br>";
             }
             displaySpecsList.innerHTML = listDisplay;
         }
-        // Allows for repetitive function calling
-        setTimeout(checkFinishDisplay, 500);
     }
 
-    checkFinishDisplay();
 
     // Resets all data and returns to start screen, called by restart button
     function restartCustomization() {
