@@ -1,6 +1,6 @@
-<!-- Credits for the template to my teacher's repository: https://github.com/jm1021/leuck_reunion.
-Credits for Architect theme to this repository: https://github.com/pages-themes/architect.
-Another credits to Intel and Nvidia for the CPUs and GPUs that they created. -->
+<!-- Credits for using the template to my teacher's repository: https://github.com/jm1021/leuck_reunion.
+Credits for using the Architect theme to this repository: https://github.com/pages-themes/architect.
+Another credits to Intel and Nvidia for the CPUs and GPUs that I added in the code. -->
 <html>
     <h1 class="main-page">Build Your own PC!</h1>
     <hr>
