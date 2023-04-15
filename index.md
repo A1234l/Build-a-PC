@@ -244,13 +244,13 @@ Another credits to Intel and Nvidia for the CPUs and GPUs that they created. -->
             // Display price
             price_display.innerHTML = priceSum + " dollars";
                 // Display comment
-                if(priceSum <= 1000){
-                    price_comment_display.innerHTML = "The PC with your specifications is relatively cheap!";
-                } else if(priceSum <= 1500 && priceSum > 1000){
-                    price_comment_display.innerHTML = "The PC with your specifications is at a moderate price.";
-                } else if(priceSum > 1500){
-                    price_comment_display.innerHTML = "The PC with your specifications is pretty expensive. Make sure to pay attention to your budget!";
-                }
+            if(priceSum <= 1000){
+                price_comment_display.innerHTML = "The PC with your specifications is relatively cheap!";
+            } else if(priceSum <= 1500 && priceSum > 1000){
+                price_comment_display.innerHTML = "The PC with your specifications is at a moderate price.";
+            } else if(priceSum > 1500){
+                price_comment_display.innerHTML = "The PC with your specifications is pretty expensive. Make sure to pay attention to your budget!";
+            }
             // Display specifications chosen by user
             let listDisplay = "";
             for (let i = 0; i < specsList.length; i++) {
