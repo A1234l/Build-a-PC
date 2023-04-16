@@ -1,4 +1,4 @@
-<!-- The website that I created has been built using the website template from Mr. Mortensen's repository: https://github.com/jm1021/leuck_reunion.
+<!-- The website has been built using the website template from Mr. Mortensen's repository: https://github.com/jm1021/leuck_reunion.
 The Architect theme for my website has been used. Credits to the Architect theme repository: https://github.com/pages-themes/architect.
 Another credits to Intel and Nvidia for the CPU and GPU products that I included in the code. -->
 <html>
