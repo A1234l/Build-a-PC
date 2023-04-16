@@ -129,8 +129,6 @@ Another credits to Intel and Nvidia for the CPU and GPU products that I included
 
     var priceSum = 0;
     var specsList = [];
-
-    console.log(specsList);
     
     // Function starts the customization form, called by start button
     function startSpecs() {
