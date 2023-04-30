@@ -1,4 +1,4 @@
-<!-- The website has been built using the website template from Mr. Mortensen(my teacher)'s repository: https://github.com/jm1021/leuck_reunion. It allows me to display the program code that I created.
+<!-- The website has been built using the website template from this repository: https://github.com/jm1021/leuck_reunion. It allows me to display the program code that I created.
 The Architect theme for my website has been used. Credits to the Architect theme repository: https://github.com/pages-themes/architect.
 Another credits to Intel and Nvidia for the CPU and GPU products that I included in the code. -->
 <html>
